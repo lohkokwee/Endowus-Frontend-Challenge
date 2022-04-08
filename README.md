@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Table of Contents
+- [Project Overview](#overview)
+- [Deployment](#deployment)
+- [How is the SPA structured?](#structure)
+- [Libraries/Technical Stack](#libraries)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview <a id="overview"></a>
+This project is conducted as part of Endowus' front end challenge. The goal of the challenge is to create an investment plan projection SPA with React.js.
 
-## Available Scripts
+The gif below showcases the final result. I did not host the SPA, however, do feel free to clone the application and run it on your localhost to test it out with the instructions in the "deployment" section.
 
-In the project directory, you can run:
+![image description](./src/assets/walkthrough.gif)
 
-### `npm start`
+# Deployment
+To deploy the app _locally_, simply run the following commands.
+1. ```cd``` into the respective folder.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Install the required dependencies by typing the following code into your terminal.
+```
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. To start the project.
+```
+npm run start 
+```
+[Back to top](#table-of-contents)
 
-### `npm test`
+<a id='structure'></a>
+# How is the SPA structured?
+The web page is split into three main components. _(This applies for both mobile and desktop views)_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## [Details](./src/features/details/)
 
-### `npm run build`
+The details section is the topmost part of the web page consisting of the description of the project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## [Inputs](./src/features/inputs/) 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The inputs section is the middle portion of the web page containing the the fields for user input. This part also contains validation logic to ensure that user input is correct before calling the mock API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## [Graph](./src/features/graph/) 
 
-### `npm run eject`
+The graph section is the final portion of the web page. This portion contains the logic for mapping the data from the API call to render it as a graph. It is also responsible for rendering a spinner while the graph is loading.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+It should be noted that the API generated for the graph produces mock data for an initial investment of S$1,000,000 and a monthly investment of S$1,140.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Back to top](#table-of-contents)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<a id="libraries"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Libraries/Technical Stack
+I experimented with several libraries to help me build this SPA. Here are the libraries and why they were used.
 
-## Learn More
+1. Redux Toolkit - State management
+2. Highcharts - Graphing
+3. react-loader-spinner - Spinner during API call
+4. Tailwind CSS - Styling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Back to top](#table-of-contents)
